@@ -1,0 +1,12 @@
+{
+  "id": "f2c714e6-5f1c-43b7-801d-29a34d279676",
+  "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+  "observed_cursor": 40,
+  "status": "matched",
+  "digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+  "expected_count": 3,
+  "mismatch_count": 0,
+  "diffs": [],
+  "diffs_truncated": false,
+  "created_at": "2026-10-19T09:28:51.201060Z"
+}

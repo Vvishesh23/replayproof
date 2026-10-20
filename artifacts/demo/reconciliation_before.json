@@ -1,0 +1,33 @@
+{
+  "id": "0f3cf3c0-e59a-42b6-8b8b-ed75bd9aeefd",
+  "stream_id": "4f9fbaaf-caa1-4b7f-b592-87ace9580479",
+  "observed_cursor": 40,
+  "status": "mismatch",
+  "digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+  "expected_count": 3,
+  "mismatch_count": 1,
+  "diffs": [
+    {
+      "minute_start": "2027-01-01T00:00:00+00:00",
+      "expected": {
+        "minute_start": "2027-01-01T00:00:00+00:00",
+        "open": 10083,
+        "high": 10099,
+        "low": 10000,
+        "close": 10099,
+        "volume": 50,
+        "trade_count": 11
+      },
+      "actual": {
+        "minute_start": "2027-01-01T00:00:00+00:00",
+        "open": 10083,
+        "high": 10099,
+        "low": 10000,
+        "close": 10099,
+        "volume": 51,
+        "trade_count": 11
+      }
+    }
+  ],
+  "diffs_truncated": false
+}

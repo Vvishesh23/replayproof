@@ -1,0 +1,28 @@
+{
+  "native_and_docker_match": true,
+  "digests": [
+    "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+    "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+    "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75"
+  ],
+  "docker_counts": [
+    {
+      "stream_id": "5ea122f1-5b0a-4977-9608-9c4cb3eb387e",
+      "source_events": 40,
+      "applied_trades": 40,
+      "bars": 3
+    },
+    {
+      "stream_id": "c52e7fe4-2138-4395-89cd-26e1dc207984",
+      "source_events": 40,
+      "applied_trades": 40,
+      "bars": 3
+    },
+    {
+      "stream_id": "70432e49-0d60-478d-8cc9-45bfdc0c6b4f",
+      "source_events": 40,
+      "applied_trades": 40,
+      "bars": 3
+    }
+  ]
+}

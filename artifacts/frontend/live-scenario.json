@@ -1,0 +1,34 @@
+{
+  "homepage_status": 200,
+  "stream": {
+    "id": "e71f2197-97f2-40b7-b6cf-2be5b37bee2e",
+    "symbol": "RPL_USD",
+    "last_applied_seq": 96,
+    "max_received_seq": 96,
+    "created_at": "2026-10-19T09:26:47.965024Z"
+  },
+  "status": {
+    "last_applied_seq": 96,
+    "max_received_seq": 96,
+    "buffered_count": 0,
+    "gaps": [],
+    "blocked_by_gaps": false,
+    "conflict_count": 1,
+    "source_event_count": 96,
+    "first_event_time": "2027-01-01T09:00:07Z",
+    "last_event_time": "2027-01-01T09:23:38Z"
+  },
+  "sql_reconciliation": {
+    "id": "f7a81291-01b3-4dd4-9227-3f05fbf4a903",
+    "stream_id": "e71f2197-97f2-40b7-b6cf-2be5b37bee2e",
+    "observed_cursor": 96,
+    "status": "matched",
+    "digest": "0bce138b4c820e93446015eda664ca6f03ccdcde1158c4ef6b32279056d374f9",
+    "expected_count": 24,
+    "mismatch_count": 0,
+    "diffs": [],
+    "diffs_truncated": false,
+    "created_at": "2026-10-19T09:27:26.229482Z"
+  },
+  "rebuild_disabled": true
+}

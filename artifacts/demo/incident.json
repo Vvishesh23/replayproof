@@ -1,0 +1,51 @@
+{
+  "seed": 2027,
+  "event_count_per_stream": 40,
+  "stream_ids": [
+    "55a4783d-7599-4916-8541-59b503bc7b34",
+    "4f9fbaaf-caa1-4b7f-b592-87ace9580479",
+    "d9ab7ed1-6f27-4bb7-bf0e-e6f0375d4d75"
+  ],
+  "withheld_sequence": 3,
+  "blocked_status": {
+    "last_applied_seq": 2,
+    "max_received_seq": 40,
+    "buffered_count": 37,
+    "gaps": [
+      [
+        3,
+        3
+      ]
+    ],
+    "blocked_by_gaps": true,
+    "conflict_count": 0
+  },
+  "recovered_status": {
+    "last_applied_seq": 40,
+    "max_received_seq": 40,
+    "buffered_count": 0,
+    "gaps": [],
+    "blocked_by_gaps": false,
+    "conflict_count": 1
+  },
+  "duplicate": {
+    "status": "duplicate",
+    "cursor": 40
+  },
+  "conflict": {
+    "status": "conflict",
+    "category": "sequence_payload",
+    "cursor": 40
+  },
+  "failures_injected": [
+    "missing sequence",
+    "bar volume +1"
+  ],
+  "repair": {
+    "before_digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+    "after_digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+    "changed_bucket_count": 1
+  },
+  "outcome": "matched",
+  "timestamp": "2026-10-18T15:11:44.206930+00:00"
+}

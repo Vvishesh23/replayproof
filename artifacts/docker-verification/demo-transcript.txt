@@ -1,0 +1,139 @@
+{
+  "incident.json": {
+    "seed": 2027,
+    "event_count_per_stream": 40,
+    "stream_ids": [
+      "19c779ad-4794-4d7a-9810-3bc19f831d04",
+      "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+      "eda25f9e-6c5e-4665-a995-63e99bb874a1"
+    ],
+    "withheld_sequence": 3,
+    "blocked_status": {
+      "last_applied_seq": 2,
+      "max_received_seq": 40,
+      "buffered_count": 37,
+      "gaps": [
+        [
+          3,
+          3
+        ]
+      ],
+      "blocked_by_gaps": true,
+      "conflict_count": 0,
+      "source_event_count": 39,
+      "first_event_time": "2027-01-01T00:00:03Z",
+      "last_event_time": "2027-01-01T00:02:59Z"
+    },
+    "recovered_status": {
+      "last_applied_seq": 40,
+      "max_received_seq": 40,
+      "buffered_count": 0,
+      "gaps": [],
+      "blocked_by_gaps": false,
+      "conflict_count": 1,
+      "source_event_count": 40,
+      "first_event_time": "2027-01-01T00:00:03Z",
+      "last_event_time": "2027-01-01T00:02:59Z"
+    },
+    "duplicate": {
+      "status": "duplicate",
+      "cursor": 40
+    },
+    "conflict": {
+      "status": "conflict",
+      "category": "sequence_payload",
+      "cursor": 40
+    },
+    "failures_injected": [
+      "missing sequence",
+      "bar volume +1"
+    ],
+    "repair": {
+      "before_digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+      "after_digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "changed_bucket_count": 1
+    },
+    "outcome": "matched",
+    "timestamp": "2026-10-19T09:28:51.689377+00:00"
+  },
+  "reconciliation_before.json": {
+    "id": "09e902e7-d75c-44a2-85cc-f510d0ac72c8",
+    "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+    "observed_cursor": 40,
+    "status": "mismatch",
+    "digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+    "expected_count": 3,
+    "mismatch_count": 1,
+    "diffs": [
+      {
+        "minute_start": "2027-01-01T00:00:00+00:00",
+        "expected": {
+          "minute_start": "2027-01-01T00:00:00+00:00",
+          "open": 10083,
+          "high": 10099,
+          "low": 10000,
+          "close": 10099,
+          "volume": 50,
+          "trade_count": 11
+        },
+        "actual": {
+          "minute_start": "2027-01-01T00:00:00+00:00",
+          "open": 10083,
+          "high": 10099,
+          "low": 10000,
+          "close": 10099,
+          "volume": 51,
+          "trade_count": 11
+        }
+      }
+    ],
+    "diffs_truncated": false,
+    "created_at": "2026-10-19T09:28:51.109103Z"
+  },
+  "reconciliation_after.json": {
+    "id": "f2c714e6-5f1c-43b7-801d-29a34d279676",
+    "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+    "observed_cursor": 40,
+    "status": "matched",
+    "digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+    "expected_count": 3,
+    "mismatch_count": 0,
+    "diffs": [],
+    "diffs_truncated": false,
+    "created_at": "2026-10-19T09:28:51.201060Z"
+  },
+  "digest_comparison.json": {
+    "modes": [
+      "ordered",
+      "shuffled_gap_retry",
+      "concurrent_duplicates"
+    ],
+    "digests": [
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75"
+    ],
+    "equal": true,
+    "expected_raw_events_per_stream": 40,
+    "actual_counts": [
+      {
+        "stream_id": "19c779ad-4794-4d7a-9810-3bc19f831d04",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      },
+      {
+        "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      },
+      {
+        "stream_id": "eda25f9e-6c5e-4665-a995-63e99bb874a1",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      }
+    ]
+  }
+}

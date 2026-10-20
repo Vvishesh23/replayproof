@@ -1,0 +1,86 @@
+# Verification — 19 October 2026
+
+## Frontend extension
+
+The owner subsequently requested a frontend. It is now served at `/` from the
+same application; `/docs` is unchanged. Static assets are included in the built
+Python package and Docker image.
+
+- Native regression suite: **24 passed**, no skips, 18.43 seconds.
+- Docker regression suite: **24 passed**, no skips, 14.16 seconds.
+- Container Ruff, strict MyPy, Alembic schema drift, CLI incident, durable restart
+  and disabled-rebuild checks passed again with the frontend/read endpoints.
+- JavaScript syntax checked with Node; assets have no runtime package dependencies.
+- Browser interaction verified the 96-event guided scenario: pause at cursor 16
+  with 79 buffered events, inspect the actual gap, recover through sequence 96,
+  quarantine the conflict and match all 24 minute bars against SQL.
+- Event paging, reconciliation history and chart switching exercised in-browser.
+  No JavaScript errors were observed during these interactions. Visual browser QA
+  covered the desktop and a narrow 615px viewport; no horizontal overflow was observed.
+
+Screenshots and scenario evidence are retained in `artifacts/frontend/`. Updated
+container test output is in `artifacts/docker-verification/pytest.txt`. Earlier
+backend-only test counts below are historical.
+
+## Backend acceptance baseline
+
+Docker acceptance completed on 19 October: Docker Desktop 4.95.0, Engine 29.8.2,
+Compose 5.6.0, container Python 3.12.15 and PostgreSQL 16.15. The first Compose
+start created a fresh project volume and migrated it before starting two API
+workers. `scripts/verify-compose.ps1` then passed all checks against that stack:
+
+- Ruff: all checks passed; strict MyPy: 10 source files; Alembic: no schema drift.
+- **21 tests passed, no skips**, 13.54 seconds (one deprecation warning).
+- The HTTP demo detected and repaired one corrupt minute; all three replay
+  digests matched both one another and the earlier native run.
+- Graceful database/API stop and start preserved 120 source fingerprints, all
+  three cursors, and all bar digests. Readiness recovered after restart.
+- Rebuild was then disabled and an HTTP request confirmed 404.
+
+Exact evidence: `artifacts/docker-verification/pytest.txt`, `demo-transcript.txt`,
+`durability-before.json`, `durability-after.json`, `replay-comparison.json`,
+`environment.json`, `containers.jsonl`, `startup.txt`, and the full
+`artifacts/verification/compose-transcript.txt`. Incident JSON and narrative are
+in `artifacts/docker-demo/`.
+
+The first container lint attempt found Windows executable bits on Python source
+files. Dockerfile now explicitly normalizes those module permissions; lint was
+rerun successfully. The failed output is retained as `compose-first-attempt.txt`.
+
+Earlier native verification (18 October) follows.
+
+Windows 11 build 26100, Python 3.12.14, native PostgreSQL 16.15 on loopback 55432,
+two Uvicorn API workers. Original specifications preserved.
+
+| Gate | Executed result |
+| --- | --- |
+| Dependencies | Installed into project-local .venv; versions in requirements.lock |
+| Ruff | All checks passed; 26 files formatted |
+| Strict MyPy | Success: 10 source files |
+| Unit + PostgreSQL tests | 21 passed, no skips, 13.11 seconds; exact output in artifacts/verification/pytest.txt |
+| Fresh migration | New replay_migration_smoke database: upgrade, check, downgrade, upgrade passed |
+| Schema drift | Alembic: No new upgrade operations detected |
+| Process race | Four spawned interpreters: one applied, seven duplicates, one canonical row |
+| Rollback | Failure on second touched minute restored prior source, cursor and bars |
+| SQL oracle | Changed, missing, extra bars detected; rebuild preserves source snapshots |
+| Concurrent reconciliation | No false mismatches during independent-stream writes |
+| HTTP incident | Passed against two API workers; exact JSON/transcript retained |
+| Database restart | Preserved 120 demo source fingerprints, three cursors and bar digests; API readiness recovered |
+| Native start helper | Existing-database readiness and migration path passed with -NoApi |
+| Benchmarks | Two exploratory workloads executed; raw samples/reconciliation retained |
+| Docker Compose | PASSED on 19 October; build, fresh volume migration, tests, incident and durable restart |
+| GitHub-hosted CI | Configuration written; remote CI not executed |
+
+The one test warning is Starlette's deprecation of its current httpx TestClient
+adapter; requests and tests pass. No warning was hidden or assertion weakened.
+
+Demo: withheld sequence 3 stopped cursor at 2 with 37 events buffered. Normal
+replay recovered through 40. Divergent retry returned 409. Injected volume 51
+instead of 50 was detected in minute 00:00, rebuild changed one bucket, and all
+ordered/shuffled/concurrent digests matched:
+c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75.
+
+Evidence files are generated by executed commands. Local MVP acceptance is complete.
+Remote GitHub-hosted CI remains unrun; its equivalent checks passed locally in Linux
+containers. Benchmark numbers are the native measurements documented separately,
+not claimed as Docker measurements.

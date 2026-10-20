@@ -1,0 +1,249 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.09kB done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 393B 0.0s done
+#2 DONE 0.1s
+
+#3 [api internal] load metadata for docker.io/library/python:3.12-slim
+#3 DONE 1.1s
+
+#4 [migrate internal] load .dockerignore
+#4 transferring context: 134B 0.0s done
+#4 DONE 0.0s
+
+#5 [api internal] load build context
+#5 DONE 0.0s
+
+#6 [api 1/6] FROM docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+#6 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.1s done
+#6 resolve docker.io/library/python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 0.1s done
+#6 DONE 0.1s
+
+#5 [migrate internal] load build context
+#5 transferring context: 90.89kB 0.0s done
+#5 DONE 0.1s
+
+#7 [api 2/6] WORKDIR /app
+#7 CACHED
+
+#8 [api 3/6] COPY requirements.lock .
+#8 CACHED
+
+#9 [api 4/6] RUN pip install --no-cache-dir -r requirements.lock
+#9 CACHED
+
+#10 [migrate 5/6] COPY . .
+#10 DONE 0.1s
+
+#11 [api 6/6] RUN find replayproof migrations tests scripts -type f -name '*.py' -exec chmod 0644 {} +     && pip install --no-cache-dir --no-deps .
+#11 1.266 Processing /app
+#11 1.273   Installing build dependencies: started
+#11 4.347   Installing build dependencies: finished with status 'done'
+#11 4.350   Getting requirements to build wheel: started
+#11 4.888   Getting requirements to build wheel: finished with status 'done'
+#11 4.892   Preparing metadata (pyproject.toml): started
+#11 5.355   Preparing metadata (pyproject.toml): finished with status 'done'
+#11 5.369 Building wheels for collected packages: replayproof
+#11 5.375   Building wheel for replayproof (pyproject.toml): started
+#11 5.866   Building wheel for replayproof (pyproject.toml): finished with status 'done'
+#11 5.869   Created wheel for replayproof: filename=replayproof-0.1.0-py3-none-any.whl size=39152 sha256=cea370d4b75727785fbcd0cb1d87fd535939d6626a4fbf137b798efb93b1dfca
+#11 5.869   Stored in directory: /tmp/pip-ephem-wheel-cache-g1dc9i5h/wheels/54/1b/b7/aa63e25c8f14f4f2ae7b04e6097bdecb770e455c5c1ee0a600
+#11 5.876 Successfully built replayproof
+#11 5.877 Installing collected packages: replayproof
+#11 5.997 Successfully installed replayproof-0.1.0
+#11 5.998 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#11 6.235 
+#11 6.235 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#11 6.235 [notice] To update, run: pip install --upgrade pip
+#11 DONE 6.5s
+
+#12 [migrate] exporting to image
+#12 exporting layers
+#12 exporting layers 0.5s done
+#12 exporting manifest sha256:93a12659d2bbd74f1655c02cc127e110849f876db6a255cac60aea66a6eac8fd 0.1s done
+#12 exporting config sha256:a6d266b63a98686c134d0640b06ad51a34f120adece4e5817ccc2e5e73588df1
+#12 exporting config sha256:a6d266b63a98686c134d0640b06ad51a34f120adece4e5817ccc2e5e73588df1 0.1s done
+#12 exporting attestation manifest sha256:18bb23cecd113d30fbb2ff3305a41147c1cd4610381c5141839d9a531c9aa0b3 0.1s done
+#12 exporting manifest list sha256:ca0f29458051d1ffc84cf9c0f0c41c37c4dbbb89bc94fff5bb787f767d0b011d
+#12 exporting manifest list sha256:ca0f29458051d1ffc84cf9c0f0c41c37c4dbbb89bc94fff5bb787f767d0b011d 0.1s done
+#12 naming to docker.io/library/replayproof-migrate:latest
+#12 naming to docker.io/library/replayproof-migrate:latest 0.0s done
+#12 unpacking to docker.io/library/replayproof-migrate:latest
+#12 unpacking to docker.io/library/replayproof-migrate:latest 0.3s done
+#12 DONE 1.3s
+
+#13 [api] exporting to image
+#13 exporting layers 0.5s done
+#13 exporting manifest sha256:558fc1186011ad466f5fd20fa79aa97c3ae2f44f3484b7647d3f82e2abed05d6 0.1s done
+#13 exporting config sha256:f6ff414d29a26f633dd118eb15783469e2053c0337723cbf0bd13314d3c6b7b7 0.1s done
+#13 exporting attestation manifest sha256:207dc6f45780e87d7d7cc07fe04f49e6cc289c291d71f4b9efda9b8f9fa340ba 0.1s done
+#13 exporting manifest list sha256:3b864825738ab6a4b4a88f0e78b293aaede665abf62bd600cca1b8bb97b67373 0.1s done
+#13 naming to docker.io/library/replayproof-api:latest 0.0s done
+#13 unpacking to docker.io/library/replayproof-api:latest 0.3s done
+#13 DONE 1.4s
+
+#14 [migrate] resolving provenance for metadata file
+#14 DONE 0.0s
+
+#15 [api] resolving provenance for metadata file
+#15 DONE 0.0s
+All checks passed!
+Success: no issues found in 10 source files
+No new upgrade operations detected.
+........................                                                 [100%]
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+24 passed, 1 warning in 14.16s
+{
+  "incident.json": {
+    "seed": 2027,
+    "event_count_per_stream": 40,
+    "stream_ids": [
+      "19c779ad-4794-4d7a-9810-3bc19f831d04",
+      "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+      "eda25f9e-6c5e-4665-a995-63e99bb874a1"
+    ],
+    "withheld_sequence": 3,
+    "blocked_status": {
+      "last_applied_seq": 2,
+      "max_received_seq": 40,
+      "buffered_count": 37,
+      "gaps": [
+        [
+          3,
+          3
+        ]
+      ],
+      "blocked_by_gaps": true,
+      "conflict_count": 0,
+      "source_event_count": 39,
+      "first_event_time": "2027-01-01T00:00:03Z",
+      "last_event_time": "2027-01-01T00:02:59Z"
+    },
+    "recovered_status": {
+      "last_applied_seq": 40,
+      "max_received_seq": 40,
+      "buffered_count": 0,
+      "gaps": [],
+      "blocked_by_gaps": false,
+      "conflict_count": 1,
+      "source_event_count": 40,
+      "first_event_time": "2027-01-01T00:00:03Z",
+      "last_event_time": "2027-01-01T00:02:59Z"
+    },
+    "duplicate": {
+      "status": "duplicate",
+      "cursor": 40
+    },
+    "conflict": {
+      "status": "conflict",
+      "category": "sequence_payload",
+      "cursor": 40
+    },
+    "failures_injected": [
+      "missing sequence",
+      "bar volume +1"
+    ],
+    "repair": {
+      "before_digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+      "after_digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "changed_bucket_count": 1
+    },
+    "outcome": "matched",
+    "timestamp": "2026-10-19T09:28:51.689377+00:00"
+  },
+  "reconciliation_before.json": {
+    "id": "09e902e7-d75c-44a2-85cc-f510d0ac72c8",
+    "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+    "observed_cursor": 40,
+    "status": "mismatch",
+    "digest": "a1b68d5db86299cb33854ecf7dfa7a78c5ccf8beb8bb1dd4f4b6da1d623c5ad5",
+    "expected_count": 3,
+    "mismatch_count": 1,
+    "diffs": [
+      {
+        "minute_start": "2027-01-01T00:00:00+00:00",
+        "expected": {
+          "minute_start": "2027-01-01T00:00:00+00:00",
+          "open": 10083,
+          "high": 10099,
+          "low": 10000,
+          "close": 10099,
+          "volume": 50,
+          "trade_count": 11
+        },
+        "actual": {
+          "minute_start": "2027-01-01T00:00:00+00:00",
+          "open": 10083,
+          "high": 10099,
+          "low": 10000,
+          "close": 10099,
+          "volume": 51,
+          "trade_count": 11
+        }
+      }
+    ],
+    "diffs_truncated": false,
+    "created_at": "2026-10-19T09:28:51.109103Z"
+  },
+  "reconciliation_after.json": {
+    "id": "f2c714e6-5f1c-43b7-801d-29a34d279676",
+    "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+    "observed_cursor": 40,
+    "status": "matched",
+    "digest": "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+    "expected_count": 3,
+    "mismatch_count": 0,
+    "diffs": [],
+    "diffs_truncated": false,
+    "created_at": "2026-10-19T09:28:51.201060Z"
+  },
+  "digest_comparison.json": {
+    "modes": [
+      "ordered",
+      "shuffled_gap_retry",
+      "concurrent_duplicates"
+    ],
+    "digests": [
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75",
+      "c2049894a12265c2a14334c995fcdd1a4531dce1b7b1268c25d9bb557d9f6a75"
+    ],
+    "equal": true,
+    "expected_raw_events_per_stream": 40,
+    "actual_counts": [
+      {
+        "stream_id": "19c779ad-4794-4d7a-9810-3bc19f831d04",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      },
+      {
+        "stream_id": "69a8bc5d-1d21-465c-a934-d22b658e90cd",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      },
+      {
+        "stream_id": "eda25f9e-6c5e-4665-a995-63e99bb874a1",
+        "source_events": 40,
+        "applied_trades": 40,
+        "bars": 3
+      }
+    ]
+  }
+}
+Captured canonical fingerprints, cursors and projection digests
+PASS: source fingerprints, cursors and bar digests survived database restart
+PASS: dev rebuild inaccessible when disabled
+NAME                    IMAGE                 COMMAND                  SERVICE   CREATED              STATUS                     PORTS
+replayproof-api-1       replayproof-api       "uvicorn replayproof…"   api       7 seconds ago        Up 3 seconds               127.0.0.1:8000->8000/tcp
+replayproof-db-1        postgres:16           "docker-entrypoint.s…"   db        26 minutes ago       Up 18 seconds (healthy)    127.0.0.1:5432->5432/tcp
+replayproof-migrate-1   replayproof-migrate   "alembic upgrade head"   migrate   About a minute ago   Exited (0) 4 seconds ago   
+PASS: Compose build, migration, checks, tests, incident and durable restart. Rebuild disabled.

@@ -1,0 +1,10 @@
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | INFO:     Started parent process [1]
+api-1  | INFO:     Started server process [9]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Started server process [8]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     172.18.0.1:61228 - "GET /health/ready HTTP/1.1" 200 OK
+api-1  | INFO:     172.18.0.1:61242 - "POST /v1/streams/5ea122f1-5b0a-4977-9608-9c4cb3eb387e/rebuild HTTP/1.1" 404 Not Found

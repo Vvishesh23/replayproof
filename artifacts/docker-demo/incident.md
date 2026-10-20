@@ -1,0 +1,1 @@
+Sequence 3 was withheld: cursor stopped at 2 while later events buffered. Normal replay recovered the prefix. A retry had no additional effect; divergent payload was audited. Local volume corruption would misstate traded volume. Independent SQL detected the exact bucket; atomic rebuild restored the matching ordered/shuffled/concurrent digests.

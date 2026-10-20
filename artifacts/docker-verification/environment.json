@@ -1,0 +1,5 @@
+{
+  "python": "3.12.15",
+  "platform": "Linux-7.0.14-linuxkit-x86_64-with-glibc2.41",
+  "postgres": "PostgreSQL 16.15 (Debian 16.15-1.pgdg13+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+}
